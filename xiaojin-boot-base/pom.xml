@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>xiaojin-boot-base-core</module>
-        <module>xiaojin-boot-base-utils</module>
-        <module>xiaojin-boot-base-quartz</module>
+        <module>xiaojin-base-core</module>
+        <module>xiaojin-base-utils</module>
+        <module>xiaojin-base-quartz</module>
     </modules>
 </project>
