@@ -44,6 +44,7 @@
 
 	<modules>
 		<module>xiaojin-boot-base</module>
+		<module>xiaojin-module-system</module>
 	</modules>
 
 	<build>
@@ -68,6 +69,18 @@
 
 	<!-- 环境 -->
 	<profiles>
+		<!-- 开发 -->
+		<profile>
+			<id>dev</id>
+			<activation>
+				<!--默认激活配置-->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!--当前环境-->
+				<profile.name>base,venv-dev</profile.name>
+			</properties>
+		</profile>
 		<!-- 代码生成器 -->
 		<profile>
 			<id>codeGenerator</id>
@@ -75,6 +88,17 @@
 				<!-- 代码生成模块 -->
 				<module>xiaojin-boot-generator</module>
 			</modules>
+		</profile>
+		<!-- SpringBoot运行环境 -->
+		<profile>
+			<id>springBoot</id>
+			<modules>
+				<!-- 代码生成模块 -->
+				<module>xiaojin-boot-start</module>
+			</modules>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 		</profile>
 		<!-- SpringCloud运行环境 -->
 		<profile>

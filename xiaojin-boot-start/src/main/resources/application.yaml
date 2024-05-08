@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: xiaojin-start
+  profiles:
+    active: '@profile.name@'
+
+# 项目相关配置
+xiaojin:
+  name: ezio
+  version: 1.0.0
+  copyrightYear: 2024
