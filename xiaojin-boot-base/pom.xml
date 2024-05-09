@@ -12,7 +12,6 @@
 
     <modules>
         <module>xiaojin-base-core</module>
-        <module>xiaojin-base-utils</module>
         <module>xiaojin-base-quartz</module>
     </modules>
 </project>

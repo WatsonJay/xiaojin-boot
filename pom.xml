@@ -19,6 +19,7 @@
 
 	<properties>
 		<java.version>17</java.version>
+		<xiaojinboot.version>0.1.0</xiaojinboot.version>
 	</properties>
 
 	<dependencies>
@@ -40,10 +41,18 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- jeecg core -->
+		<dependency>
+			<groupId>org.xiaojinframework.boot</groupId>
+			<artifactId>xiaojin-base-core</artifactId>
+			<version>${xiaojinboot.version}</version>
+		</dependency>
 	</dependencies>
 
 	<modules>
 		<module>xiaojin-boot-base</module>
+		<module>xiaojin-boot-common</module>
+		<module>xiaojin-boot-start</module>
 		<module>xiaojin-module-system</module>
 	</modules>
 
@@ -81,14 +90,6 @@
 				<profile.name>base,venv-dev</profile.name>
 			</properties>
 		</profile>
-		<!-- 代码生成器 -->
-		<profile>
-			<id>codeGenerator</id>
-			<modules>
-				<!-- 代码生成模块 -->
-				<module>xiaojin-boot-generator</module>
-			</modules>
-		</profile>
 		<!-- SpringBoot运行环境 -->
 		<profile>
 			<id>springBoot</id>
@@ -106,6 +107,14 @@
 			<modules>
 				<!-- 微服务模块 -->
 				<module>xiaojin-server-cloud</module>
+			</modules>
+		</profile>
+		<!-- 代码生成器 -->
+		<profile>
+			<id>codeGenerator</id>
+			<modules>
+				<!-- 代码生成模块 -->
+				<module>xiaojin-boot-generator</module>
 			</modules>
 		</profile>
 	</profiles>
