@@ -12,3 +12,9 @@ server:
     include-message: ALWAYS
   servlet:
     context-path: /xiaojin-boot
+
+jasypt:
+  encryptor:
+    property:
+      prefix: CODE#
+      suffix: #

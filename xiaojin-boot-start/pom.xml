@@ -10,6 +10,10 @@
 	<artifactId>xiaojin-boot-start</artifactId>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.xiaojinframework.boot</groupId>
+			<artifactId>xiaojin-base-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

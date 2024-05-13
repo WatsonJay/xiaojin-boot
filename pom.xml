@@ -20,6 +20,10 @@
 	<properties>
 		<java.version>17</java.version>
 		<xiaojinboot.version>0.1.0</xiaojinboot.version>
+
+		<!-- 基础服务 -->
+		<hutool.version>5.8.27</hutool.version>
+		<jasypt.version>3.0.5</jasypt.version>
 	</properties>
 
 	<dependencies>
@@ -29,25 +33,42 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Lombok -->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- jeecg core -->
-		<dependency>
-			<groupId>org.xiaojinframework.boot</groupId>
-			<artifactId>xiaojin-base-core</artifactId>
-			<version>${xiaojinboot.version}</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-bom</artifactId>
+				<version>${hutool.version}</version>
+				<type>pom</type>
+				<!-- 注意这里是import -->
+				<scope>import</scope>
+			</dependency>
+			<!-- xiaojin core -->
+			<dependency>
+				<groupId>org.xiaojinframework.boot</groupId>
+				<artifactId>xiaojin-base-core</artifactId>
+				<version>${xiaojinboot.version}</version>
+				<scope>import</scope>
+			</dependency>
+			<!-- xiaojin common -->
+			<dependency>
+				<groupId>org.xiaojinframework.boot</groupId>
+				<artifactId>xiaojin-boot-common</artifactId>
+				<version>${xiaojinboot.version}</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<modules>
 		<module>xiaojin-boot-base</module>
