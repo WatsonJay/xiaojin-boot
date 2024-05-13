@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.StringEncryptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.xiaojin.common.util.SmUtils;
 
 /**
  * @author admin
@@ -20,16 +21,17 @@ public class MyStringEncryptorConfig {
     private String key = System.getProperty("key", "1122334455667788");
     private String salt = System.getProperty("salt", "aabbccddeeffgghh");
 
-    public StringEncryptor jasyptStringEncryptor(JasyptEncryptorConfigurationProperties properties) {
+    @Bean("jasyptStringEncryptor")
+    public StringEncryptor jasyptStringEncryptor() {
         return new StringEncryptor() {
             @Override
             public String encrypt(String s) {
-                return null;
+                return SmUtils.sm4EncryptDataByCBC(s, key, salt);
             }
 
             @Override
             public String decrypt(String s) {
-                return null;
+                return SmUtils.sm4DecryptDataByCBC(s, key, salt);
             }
         };
     }
