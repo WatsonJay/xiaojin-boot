@@ -26,12 +26,24 @@ public class MyStringEncryptorConfig {
         return new StringEncryptor() {
             @Override
             public String encrypt(String s) {
-                return SmUtils.sm4EncryptDataByCBC(s, key, salt);
+                String result = "";
+                try {
+                    result = SmUtils.sm4EncryptDataByCBC(s, key, salt);
+                } catch (Exception e) {
+                    throw new RuntimeException("-----jasypt加密失败------");
+                }
+                return result;
             }
 
             @Override
             public String decrypt(String s) {
-                return SmUtils.sm4DecryptDataByCBC(s, key, salt);
+                String result = "";
+                try {
+                    result = SmUtils.sm4DecryptDataByCBC(s, key, salt);
+                } catch (Exception e) {
+                    throw new RuntimeException("-----jasypt解密失败------");
+                }
+                return result;
             }
         };
     }

@@ -16,5 +16,5 @@ server:
 jasypt:
   encryptor:
     property:
-      prefix: CODE#
-      suffix: #
+      prefix: CODE@(
+      suffix: )

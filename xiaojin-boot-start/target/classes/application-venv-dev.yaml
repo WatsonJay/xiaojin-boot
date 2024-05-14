@@ -1,4 +1,12 @@
 # 开发环境配置
 server:
-  # 服务器的HTTP端口，默认为80
   port: 14520
+
+spring:
+  #redis 配置
+  data:
+    redis:
+      database: 0
+      host: CODE@(1328c18b9808b6939f412dde107d9a7b)
+      port: 16379
+      password: CODE@(09bc669165cfb19efa65134735e86475)

@@ -6,6 +6,7 @@ import cn.hutool.crypto.Padding;
 import cn.hutool.crypto.symmetric.SM4;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 /**
  * @author admin
@@ -40,9 +41,15 @@ public class SmUtils {
 
 
     public static void main(String[] args) {
-        String encCode = sm4EncryptDataByCBC("test code", "1122334455667788", "aabbccddeeffgghh");
-        System.out.println(encCode);
-        String decCode = sm4DecryptDataByCBC(encCode, "1122334455667788", "aabbccddeeffgghh");
-        System.out.println(decCode);
+        Scanner sc = new Scanner(System.in);
+        String str = "";
+        System.out.println("要加密的字符串：");
+        str = sc.nextLine();
+        String encCode = sm4EncryptDataByCBC(str, System.getProperty("key", "1122334455667788"),
+                System.getProperty("salt", "aabbccddeeffgghh"));
+        System.out.println("加密后的字符串为:" + encCode);
+        String decCode = sm4DecryptDataByCBC(encCode, System.getProperty("key", "1122334455667788"),
+                System.getProperty("salt", "aabbccddeeffgghh"));
+        System.out.println("解密后的字符串为:" + decCode);
     }
 }
