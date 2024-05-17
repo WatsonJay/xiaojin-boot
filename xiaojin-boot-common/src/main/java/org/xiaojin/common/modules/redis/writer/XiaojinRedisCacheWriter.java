@@ -211,7 +211,7 @@ public class XiaojinRedisCacheWriter implements RedisCacheWriter {
             connection.close();
         }
 
-        return var4;
+        return (T) var4;
     }
 
     private void executeLockFree(Consumer<RedisConnection> callback) {
