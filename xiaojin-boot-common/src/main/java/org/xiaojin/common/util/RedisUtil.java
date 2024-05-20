@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName RedisUtil.java
  * @Description TODO

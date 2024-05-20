@@ -25,7 +25,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName XiaojinRedisCacheWriter.java
  * @Description TODO

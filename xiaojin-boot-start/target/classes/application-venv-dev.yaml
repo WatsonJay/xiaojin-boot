@@ -10,3 +10,7 @@ spring:
       host: CODE@(1328c18b9808b6939f412dde107d9a7b)
       port: 16379
       password: CODE@(09bc669165cfb19efa65134735e86475)
+
+knife4j:
+  #开启生产环境屏蔽
+  production: false

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName SpringContextHolder.java
  * @Description TODO

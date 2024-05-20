@@ -7,7 +7,7 @@ import org.xiaojin.common.modules.redis.listener.XiaojinRedisListener;
 import org.xiaojin.common.util.SpringContextHolder;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName RedisReceiver.java
  * @Description TODO

@@ -1,7 +1,7 @@
 package org.xiaojin.common.exception;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName XiaojinBootException.java
  * @Description TODO

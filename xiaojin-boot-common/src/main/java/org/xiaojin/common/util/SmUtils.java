@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName SmUtils.java
  * @Description TODO

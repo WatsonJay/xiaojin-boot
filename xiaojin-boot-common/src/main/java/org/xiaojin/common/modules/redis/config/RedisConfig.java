@@ -36,7 +36,7 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName RedisConfig.java
  * @Description TODO

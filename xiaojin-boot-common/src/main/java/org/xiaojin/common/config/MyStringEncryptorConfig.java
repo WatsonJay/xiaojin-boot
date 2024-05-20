@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.xiaojin.common.util.SmUtils;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName MyStringEncryptorConfig.java
  * @Description
@@ -38,6 +38,7 @@ public class MyStringEncryptorConfig {
             @Override
             public String decrypt(String s) {
                 String result = "";
+                log.debug("当前解密数据: " + s);
                 try {
                     result = SmUtils.sm4DecryptDataByCBC(s, key, salt);
                 } catch (Exception e) {

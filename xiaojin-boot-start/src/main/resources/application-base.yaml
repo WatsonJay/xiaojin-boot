@@ -13,8 +13,21 @@ server:
   servlet:
     context-path: /xiaojin-boot
 
+#配置加解密
 jasypt:
   encryptor:
     property:
       prefix: CODE@(
       suffix: )
+
+#swagger
+knife4j:
+  #开启增强配置
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体类列表
+  basic:
+    enable: true
+    username: CODE@(6154ec3826a218c4c3868bfe4ec51d0e)
+    password: CODE@(2ac7f3b0137300e798610273b6c7b43c)

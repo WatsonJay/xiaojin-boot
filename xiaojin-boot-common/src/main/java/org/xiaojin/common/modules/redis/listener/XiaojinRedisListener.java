@@ -3,7 +3,7 @@ package org.xiaojin.common.modules.redis.listener;
 import org.xiaojin.common.base.ExtendMap;
 
 /**
- * @author admin
+ * @author JayWatson
  * @version 1.0.0
  * @ClassName XiaojinRedisListener.java
  * @Description TODO
