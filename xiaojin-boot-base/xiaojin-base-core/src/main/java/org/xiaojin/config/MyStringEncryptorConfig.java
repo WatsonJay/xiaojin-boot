@@ -1,4 +1,4 @@
-package org.xiaojin.common.config;
+package org.xiaojin.config;
 
 import com.ulisesbocchio.jasyptspringboot.properties.JasyptEncryptorConfigurationProperties;
 import lombok.extern.slf4j.Slf4j;
