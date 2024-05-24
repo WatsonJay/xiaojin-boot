@@ -3,7 +3,7 @@ package org.xiaojin.common.base;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.xiaojin.common.constant.CommonConstant;
+import org.xiaojin.common.constant.ResultCodeConstant;
 
 import java.io.Serializable;
 
@@ -60,7 +60,7 @@ public class Result<T> implements Serializable {
 
     public Result<T> success(String message) {
         this.message = message;
-        this.code = CommonConstant.RQ_OK_200;
+        this.code = ResultCodeConstant.RQ_OK_200;
         this.success = true;
         return this;
     }
@@ -68,14 +68,14 @@ public class Result<T> implements Serializable {
     public static<T> Result<T> ok() {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         return r;
     }
 
     public static<T> Result<T> ok(String msg) {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         //Result OK(String msg)方法会造成兼容性问题 issues/I4IP3D
         r.setResult((T) msg);
         r.setMessage(msg);
@@ -85,7 +85,7 @@ public class Result<T> implements Serializable {
     public static<T> Result<T> ok(T data) {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         r.setResult(data);
         return r;
     }
@@ -93,14 +93,14 @@ public class Result<T> implements Serializable {
     public static<T> Result<T> OK() {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         return r;
     }
 
     public static<T> Result<T> OK(T data) {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         r.setResult(data);
         return r;
     }
@@ -108,7 +108,7 @@ public class Result<T> implements Serializable {
     public static<T> Result<T> OK(String msg, T data) {
         Result<T> r = new Result<T>();
         r.setSuccess(true);
-        r.setCode(CommonConstant.RQ_OK_200);
+        r.setCode(ResultCodeConstant.RQ_OK_200);
         r.setMessage(msg);
         r.setResult(data);
         return r;
@@ -117,14 +117,14 @@ public class Result<T> implements Serializable {
     public static<T> Result<T> error(String msg, T data) {
         Result<T> r = new Result<T>();
         r.setSuccess(false);
-        r.setCode(CommonConstant.RQ_INTERNAL_SERVER_ERROR_500);
+        r.setCode(ResultCodeConstant.RQ_INTERNAL_SERVER_ERROR_500);
         r.setMessage(msg);
         r.setResult(data);
         return r;
     }
 
     public static<T> Result<T> error(String msg) {
-        return error(CommonConstant.RQ_INTERNAL_SERVER_ERROR_500, msg);
+        return error(ResultCodeConstant.RQ_INTERNAL_SERVER_ERROR_500, msg);
     }
 
     public static<T> Result<T> error(int code, String msg) {
@@ -137,7 +137,7 @@ public class Result<T> implements Serializable {
 
     public Result<T> error500(String message) {
         this.message = message;
-        this.code = CommonConstant.RQ_INTERNAL_SERVER_ERROR_500;
+        this.code = ResultCodeConstant.RQ_INTERNAL_SERVER_ERROR_500;
         this.success = false;
         return this;
     }
@@ -146,7 +146,7 @@ public class Result<T> implements Serializable {
      * 无权限访问返回结果
      */
     public static<T> Result<T> noauth(String msg) {
-        return error(CommonConstant.RQ_XIAOJIN_NO_AUTHZ, msg);
+        return error(ResultCodeConstant.RQ_XIAOJIN_NO_AUTHZ, msg);
     }
 
     @JsonIgnore

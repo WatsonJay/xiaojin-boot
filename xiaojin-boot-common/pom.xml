@@ -15,7 +15,6 @@
 		<dependency>
 			<groupId>com.github.xiaoymin</groupId>
 			<artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-			<version>${knife4j-spring-boot-starter.version}</version>
 		</dependency>
 		<!-- lombok -->
 		<dependency>
@@ -26,11 +25,7 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.github.ulisesbocchio</groupId>
-			<artifactId>jasypt-spring-boot-starter</artifactId>
-			<version>${jasypt.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-core</artifactId>

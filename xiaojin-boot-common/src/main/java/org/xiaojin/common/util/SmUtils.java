@@ -42,14 +42,27 @@ public class SmUtils {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String type = "";
         String str = "";
-        System.out.println("要加密的字符串：");
-        str = sc.nextLine();
-        String encCode = sm4EncryptDataByCBC(str, System.getProperty("key", "1122334455667788"),
-                System.getProperty("salt", "aabbccddeeffgghh"));
-        System.out.println("加密后的字符串为:" + encCode);
-        String decCode = sm4DecryptDataByCBC(encCode, System.getProperty("key", "1122334455667788"),
-                System.getProperty("salt", "aabbccddeeffgghh"));
-        System.out.println("解密后的字符串为:" + decCode);
+        System.out.println("选择需要的模式：1加密,2解密");
+        type = sc.nextLine();
+        switch (type) {
+            case "1":
+                System.out.println("要加密的字符串：");
+                str = sc.nextLine();
+                String encCode = sm4EncryptDataByCBC(str, System.getProperty("key", "1122334455667788"),
+                        System.getProperty("salt", "aabbccddeeffgghh"));
+                System.out.println("加密后的字符串为:" + encCode);
+                break;
+            case "2":
+                System.out.println("要解密的字符串：");
+                str = sc.nextLine();
+                String decCode = sm4DecryptDataByCBC(str, System.getProperty("key", "1122334455667788"),
+                        System.getProperty("salt", "aabbccddeeffgghh"));
+                System.out.println("解密后的字符串为:" + decCode);
+                break;
+            default:
+                System.out.println("无模式");
+        }
     }
 }

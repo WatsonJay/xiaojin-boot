@@ -3,6 +3,48 @@ server:
   port: 14520
 
 spring:
+  #数据源相关配置
+  datasource:
+    druid:
+      stat-view-servlet:
+        enabled: true
+        loginUsername: CODE@(bad49ee60cb591899e7eac353bcf419e)
+        loginPassword: CODE@(2667f4f430bae1659def10a6b0b660ef)
+        allow:
+      web-stat-filter:
+        enabled: true
+    dynamic:
+      druid: # 全局druid参数，绝大部分值和默认保持一致。(现已支持的参数如下,不清楚含义不要乱设置)
+        # 连接池的配置信息
+        # 初始化大小，最小，最大
+        initial-size: 5
+        min-idle: 5
+        maxActive: 1000
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+        filters: stat,slf4j
+        # 打开mergeSql功能；慢SQL记录
+        stat:
+          merge-sql: true
+          slow-sql-millis: 5000
+      datasource:
+        master:
+          url: CODE@(9a73c3fc7bd483d85a7564bdcc386df95fb33fd98cbcc8fa6af2db3198a3306c8cc29fc7a3dab6fab7e7a6e8e60f9ebdce8f821d77fbb5ba7c4c2d1728dd65d74cb28c076fa4222bd1eca3aacac844e973da9e8678497d65d3836fe707ea1e18077f25d4ecac04ef59b3d2863541424e3a1eff7934856ea967dd795d406355b413f09c3b942d8c0d1e6869cfecc25aa9def48050b3b235d4dd87a90ea52408ec2fd9c0acbaa1336f46956671068bf490)
+          username: CODE@(af9e6c4d565ecb2c1268ca128d1e37d2)
+          password: CODE@(315f6267cb1563063675c3f4b91cef05)
+          driver-class-name: com.mysql.cj.jdbc.Driver
   #redis 配置
   data:
     redis:

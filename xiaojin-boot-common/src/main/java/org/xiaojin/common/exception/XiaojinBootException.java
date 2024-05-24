@@ -1,6 +1,7 @@
 package org.xiaojin.common.exception;
 
 import org.xiaojin.common.constant.CommonConstant;
+import org.xiaojin.common.constant.ResultCodeConstant;
 
 /**
  * @author JayWatson
@@ -13,7 +14,7 @@ public class XiaojinBootException extends RuntimeException{
 
     private static final long serialVersionUID = 1L;
 
-    private int errCode = CommonConstant.RQ_INTERNAL_SERVER_ERROR_500;
+    private int errCode = ResultCodeConstant.RQ_INTERNAL_SERVER_ERROR_500;
 
     public XiaojinBootException(String message) {
         super(message);
